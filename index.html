@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iin Wijyawati — Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+:root{--ink:#17211f;--cream:#f7f4ed;--paper:#fffdf8;--sage:#dfe9df;--green:#496a5b;--lime:#c8dbbd;--muted:#69736f;--line:#dce1db}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65}
+a{text-decoration:none;color:inherit}
+.container{max-width:1120px;margin:auto;padding:0 26px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(247,244,237,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,225,219,.8)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:21px;font-weight:700;letter-spacing:-1px}.logo em{font-style:normal;color:var(--green)}
+.links{display:flex;gap:28px;font-size:13px;font-weight:600;color:#5f6864}
+.links a:hover{color:var(--green)}
+.hero{min-height:100vh;display:grid;align-items:center;padding:120px 0 70px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:var(--sage);right:-170px;top:80px;opacity:.65}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:75px;align-items:center;position:relative}
+.kicker{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:22px}
+.kicker:before{content:"";width:30px;height:2px;background:var(--green)}
+h1{font-family:'Playfair Display',serif;font-size:clamp(52px,7vw,84px);line-height:.98;letter-spacing:-3px;font-weight:700;margin-bottom:26px}
+h1 span{color:var(--green)}
+.hero-copy{font-size:18px;color:var(--muted);max-width:650px}
+.cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn{padding:13px 20px;border-radius:7px;font-size:13px;font-weight:700;border:1px solid var(--ink);transition:.2s}
+.btn.dark{background:var(--ink);color:#fff}.btn.light{background:transparent}
+.btn:hover{transform:translateY(-2px)}
+.card-stack{position:relative;min-height:410px}
+.main-card{position:absolute;right:20px;top:25px;width:330px;height:385px;background:var(--green);color:#fff;border-radius:26px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:20px 20px 0 var(--lime)}
+.monogram{font-family:'Playfair Display',serif;font-size:94px;line-height:1;color:#dce9dc}
+.card-bottom{font-size:14px;color:#e7eee8}.card-bottom strong{display:block;font-size:20px;color:#fff;margin-bottom:3px}
+.float{position:absolute;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 17px;box-shadow:0 12px 30px rgba(25,35,30,.08);font-size:12px;font-weight:700}
+.float.one{left:0;top:65px}.float.two{right:-5px;bottom:30px}.float b{display:block;font-size:19px;color:var(--green)}
+section{padding:105px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+.num{font-size:12px;color:var(--green);font-weight:800;letter-spacing:2px}
+h2{font-family:'Playfair Display',serif;font-size:46px;line-height:1.1;letter-spacing:-1px}
+.intro{max-width:510px;color:var(--muted);font-size:15px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.about-copy{font-size:19px;max-width:650px}
+.about-note{border-left:3px solid var(--green);padding-left:24px;color:var(--muted);font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
+.tag{padding:9px 13px;border:1px solid #cfd7cf;border-radius:30px;background:rgba(255,255,255,.4);font-size:12px;font-weight:600}
+.experience{display:grid;gap:15px}
+.job{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:29px 31px;display:grid;grid-template-columns:190px 1fr;gap:30px}
+.job:hover{box-shadow:0 12px 30px rgba(25,35,30,.06)}
+.date{font-size:12px;font-weight:700;color:var(--green);letter-spacing:.5px}.company{font-size:13px;color:#777;margin-top:4px}
+.job h3{font-size:21px;margin-bottom:13px}
+.job ul{padding-left:19px;color:#626b67;font-size:14px}.job li+li{margin-top:6px}
+.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.skill-list{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.skill{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:17px;font-size:13px;font-weight:600}
+.skill span{display:block;font-size:10px;color:#8a938e;margin-bottom:3px;text-transform:uppercase;letter-spacing:1px}
+.edu-card{background:var(--ink);color:#fff;border-radius:22px;padding:38px;position:relative;overflow:hidden}
+.edu-card:after{content:"03";position:absolute;right:25px;bottom:-28px;font-family:'Playfair Display';font-size:150px;color:#fff;opacity:.05}
+.edu-card .label{color:var(--lime);font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:700}
+.edu-card h3{font-family:'Playfair Display';font-size:29px;margin:12px 0 5px}.edu-card p{color:#c5ceca;font-size:14px}
+.contact-box{background:var(--sage);border-radius:25px;padding:48px;display:flex;justify-content:space-between;gap:40px;align-items:center}
+.contact-box h2{font-size:43px}.contact-info{display:grid;gap:12px;font-size:14px}.contact-info div{background:rgba(255,255,255,.55);padding:12px 16px;border-radius:8px}
+footer{padding:30px 0;color:#7b837f;font-size:12px;text-align:center}
+@media(max-width:800px){
+.links{display:none}.hero-grid,.about-grid,.skills-wrap{grid-template-columns:1fr;gap:45px}.hero{padding-top:120px}.card-stack{min-height:390px}
+.main-card{right:12%;width:300px}.section-head{display:block}.intro{margin-top:14px}.job{grid-template-columns:1fr;gap:12px}.contact-box{display:block;padding:32px}.contact-info{margin-top:25px}.skill-list{grid-template-columns:1fr 1fr}h2{font-size:39px}
+}
+@media(max-width:460px){.container{padding:0 18px}.main-card{right:2%;width:280px}.float.one{left:-5px}.float.two{right:-8px}.skill-list{grid-template-columns:1fr}h1{font-size:53px}}
+
+/* Workflow & KPI */
+.impact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;margin-top:32px}.impact-card{border:1px solid rgba(20,20,20,.14);padding:30px;border-radius:24px;background:rgba(255,255,255,.62)}.impact-card.featured{background:#171717;color:#fff}.tag{font-size:11px;letter-spacing:.14em;font-weight:700;opacity:.65;margin-bottom:18px}.impact-card h3{font-size:25px;margin:0 0 24px}.metric{display:flex;align-items:baseline;gap:10px}.metric strong{font-size:54px;line-height:1}.metric span{font-size:13px;opacity:.68}.metric.bottom{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18)}.impact-card:not(.featured) .metric.bottom{border-color:rgba(20,20,20,.12)}.flow,.mini-flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:28px 0 22px}.flow span,.mini-flow span{font-size:11px;font-weight:700;padding:8px 10px;border:1px solid currentColor;border-radius:999px;opacity:.9}.flow b,.mini-flow b{opacity:.5}.impact-card p{font-size:13px;line-height:1.7;opacity:.72;margin:20px 0 0}.bar-wrap{margin:25px 0}.bar-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:9px}.bar-label b{font-weight:700}.bar{height:9px;border-radius:20px;background:rgba(20,20,20,.1);overflow:hidden}.bar i{display:block;height:100%;background:#171717;border-radius:20px}.workflow-note{margin-top:20px;padding:20px 24px;border-left:3px solid #171717;font-size:14px;line-height:1.6}.workflow-note strong{margin-right:5px}@media(max-width:760px){.impact-grid{grid-template-columns:1fr}.flow,.mini-flow{gap:6px}.impact-card{padding:24px}.metric strong{font-size:45px}}
+</style>
+</head>
+<body>
+<nav><div class="container nav"><a class="logo" href="#top">Iin<em>.</em></a><div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></div></div></nav>
+
+<main id="top">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="kicker">Portfolio · Open to Work</div>
+<h1>Iin<br><span>Wijyawati</span></h1>
+<p class="hero-copy">Administrasi & Customer Service dengan pengalaman dalam pengelolaan data, pelayanan pelanggan, verifikasi dokumen, administrasi operasional, dan follow-up.</p>
+<div class="cta"><a class="btn dark" href="#experience">Explore Experience ↗</a><a class="btn light" href="mailto:iin.wjyawati@gmail.com">Let's Connect</a></div>
+</div>
+<div class="card-stack">
+<div class="float one"><b>8+ tahun</b>pengalaman kerja</div>
+<div class="main-card"><div class="monogram">IW</div><div class="card-bottom"><strong>Admin · Customer Service</strong>Tangerang, Jakarta<br>Detail-oriented · Communicative · Adaptive</div></div>
+<div class="float two"><b>03</b>core roles</div>
+</div>
+</div>
+</section>
+
+<section id="about"><div class="container">
+<div class="section-head"><div><div class="num">01 — ABOUT</div><h2>Professional<br>Profile</h2></div><p class="intro">Terbiasa bekerja dengan data, dokumen, pelanggan, dan proses administrasi yang membutuhkan ketelitian.</p></div>
+<div class="about-grid"><div class="about-copy">Memiliki keahlian di bidang Administrasi dan Customer Service, dengan fokus pada pengelolaan data, pelayanan pelanggan, dan penanganan keluhan.</div>
+<div class="about-note">Komunikatif, teliti, adaptif, dan mampu bekerja secara mandiri maupun dalam tim. Berpengalaman melakukan follow-up, verifikasi data, penyusunan laporan, serta menjalankan administrasi sesuai prosedur.</div></div>
+</div></section>
+
+<section id="experience"><div class="container">
+<div class="section-head"><div><div class="num">02 — EXPERIENCE</div><h2>Work<br>Experience</h2></div><p class="intro">Pengalaman di bidang finance, contact center, dan administrasi operasional.</p></div>
+<div class="experience">
+<article class="job"><div><div class="date">2022 — 2026</div><div class="company">Transpacific Finance</div></div><div><h3>Admin Operasional</h3><ul><li>Menangani pelayanan pembayaran angsuran, pelunasan, pengambilan BPKB, serta proses klaim asuransi.</li><li>Melakukan screening dan verifikasi awal dokumen kredit serta memastikan akurasi data pengajuan.</li><li>Mengelola administrasi Purchase Order (PO), verifikasi unit, dan laporan pencairan berkoordinasi dengan Finance.</li><li>Menyusun laporan operasional harian, administrasi keuangan, proses setoran bank, dan dokumen FPPU.</li></ul></div></article>
+<article class="job"><div><div class="date">2021 — 2022</div><div class="company">KB Finansia MF</div></div><div><h3>Contact Center</h3><ul><li>Menangani inbound dan outbound call untuk memberikan informasi, menangani keluhan, serta melakukan tindak lanjut kebutuhan pelanggan.</li><li>Melakukan follow-up pembayaran dan negosiasi Promise to Pay (PTP) sesuai target dan prosedur.</li><li>Memperbarui data pelanggan, menyusun laporan aktivitas harian, serta memantau KPI layanan.</li></ul></div></article>
+<article class="job"><div><div class="date">2018 — 2020</div><div class="company">Summit Oto Finance</div></div><div><h3>Call Center</h3><ul><li>Menangani layanan pelanggan melalui panggilan inbound dan outbound.</li><li>Melakukan follow-up pembayaran, negosiasi Promise to Pay (PTP), serta tindak lanjut kendala pelanggan.</li><li>Memperbarui dan memastikan akurasi data pelanggan pada sistem serta mencapai target KPI.</li></ul></div></article>
+</div>
+</div></section>
+
+<section id="impact"><div class="container">
+<div class="section-head"><div><div class="num">03 — WORKFLOW & KPI</div><h2>How I Work</h2></div><p class="intro">Gambaran alur kerja dan volume aktivitas yang saya tangani dalam peran Admin dan Call Center.</p></div>
+
+<div class="impact-grid">
+<div class="impact-card featured"><div class="tag">ADMIN OPERASIONAL</div><h3>From Data to Drawdown</h3><div class="metric"><strong>50+</strong><span>data awal / hari</span></div><div class="flow"><span>Data Masuk</span><b>→</b><span>Screening</span><b>→</b><span>Verifikasi</span><b>→</b><span>PO</span><b>→</b><span>Drawdown</span></div><div class="metric bottom"><strong>200</strong><span>Drawdown / bulan</span></div><p>Mengelola proses administrasi dari data awal, screening dokumen, verifikasi unit, PO, hingga laporan pencairan.</p></div>
+
+<div class="impact-card"><div class="tag">CALL CENTER</div><h3>Follow-up & Closing</h3><div class="metric"><strong>190</strong><span>target PTP / hari</span></div><div class="bar-wrap"><div class="bar-label"><span>Target PTP</span><b>190 / hari</b></div><div class="bar"><i style="width:100%"></i></div></div><div class="bar-wrap"><div class="bar-label"><span>Closing Ratio</span><b>35% / bulan</b></div><div class="bar"><i style="width:35%"></i></div></div><div class="mini-flow"><span>Call</span><b>→</b><span>Follow-up</span><b>→</b><span>PTP</span><b>→</b><span>Closing</span></div><p>Fokus pada komunikasi, follow-up pembayaran, negosiasi PTP, dan pencapaian KPI.</p></div>
+</div>
+
+<div class="workflow-note"><strong>Strength in process.</strong> Terbiasa menjaga akurasi data sambil bekerja dengan target, volume aktivitas, dan deadline.</div>
+</div></section>
+
+<section id="skills"><div class="container">
+<div class="section-head"><div><div class="num">03 — SKILLS</div><h2>What I<br>Bring</h2></div><p class="intro">Kompetensi yang mendukung pekerjaan administrasi dan customer service sehari-hari.</p></div>
+<div class="skills-wrap"><div class="skill-list">
+<div class="skill"><span>01</span>Administrasi & Data Entry</div><div class="skill"><span>02</span>Document Management</div><div class="skill"><span>03</span>Verifikasi Data</div><div class="skill"><span>04</span>Problem-Solving</div><div class="skill"><span>05</span>Time Management</div><div class="skill"><span>06</span>Teamwork</div><div class="skill"><span>07</span>Attention To Detail</div><div class="skill"><span>08</span>Follow-up & Negosiasi</div>
+</div><div class="about-note">Fokus utama saya adalah memastikan pekerjaan administratif berjalan rapi, data akurat, kebutuhan pelanggan ditindaklanjuti, dan proses kerja dapat berjalan sesuai prosedur.</div></div>
+</div></section>
+
+<section id="education"><div class="container">
+<div class="section-head"><div><div class="num">04 — EDUCATION</div><h2>Education</h2></div></div>
+<div class="edu-card"><div class="label">Diploma III</div><h3>Perpajakan</h3><p>Universitas Trisakti Jakarta · 2014 — 2017</p></div>
+</div></section>
+
+<section id="contact"><div class="container"><div class="contact-box">
+<div><div class="num">05 — CONTACT</div><h2>Let's work<br>together.</h2></div>
+<div class="contact-info"><div>✉ &nbsp; <a href="mailto:iin.wjyawati@gmail.com">iin.wjyawati@gmail.com</a></div><div>☎ &nbsp; <a href="tel:+6287890144765">0878 9014 4765</a></div><div>⌖ &nbsp; Tangerang, Jakarta</div></div>
+</div></div></section>
+</main>
+<footer>© 2026 Iin Wijyawati · Portfolio</footer>
+</body>
+</html>
