@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Iin Wijyawati</title>
+<style>
+:root{--ink:#18212f;--muted:#687386;--paper:#f6f7fb;--white:#fff;--lime:#d7ff64;--violet:#7657f6;--line:#e5e8ef;--dark:#171c2b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}.wrap{max-width:1120px;margin:auto;padding:0 26px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0}.brand{font-weight:900;letter-spacing:-.04em;font-size:1.1rem}.brand span{color:var(--violet)}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:.88rem}
+.hero{padding:54px 0 76px;display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;text-transform:uppercase;letter-spacing:.13em;font-weight:800;color:var(--violet)}.dot{width:8px;height:8px;border-radius:50%;background:#8cc63f}
+h1{font-size:clamp(3.1rem,7vw,6.3rem);line-height:.95;letter-spacing:-.075em;margin:18px 0 22px;font-weight:900}h1 em{font-style:normal;color:var(--violet)}.lead{max-width:620px;color:var(--muted);font-size:1.08rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;border-radius:99px;padding:12px 19px;font-size:.9rem;font-weight:800;background:var(--dark);color:white}.btn.alt{background:white;color:var(--ink);border:1px solid var(--line)}
+.visual{min-height:390px;background:var(--dark);border-radius:28px;padding:25px;color:white;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}.visual:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:var(--lime);right:-90px;top:-80px}.visual:after{content:"";position:absolute;width:160px;height:160px;border-radius:35px;transform:rotate(22deg);background:var(--violet);right:40px;bottom:45px;opacity:.9}.visual>*{position:relative;z-index:1}.visual .mini{font-size:.76rem;color:#d3d8e2;letter-spacing:.12em;text-transform:uppercase}.visual .monogram{font-size:5.2rem;line-height:1;font-weight:900;letter-spacing:-.1em}.visual .tag{align-self:flex-start;border:1px solid #ffffff50;border-radius:99px;padding:7px 12px;font-size:.78rem}
+.section{padding:70px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.kicker{color:var(--violet);font-size:.75rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.section h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.04;letter-spacing:-.06em;margin:8px 0 0}.section-intro{max-width:390px;color:var(--muted);font-size:.94rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.stat{background:white;border:1px solid var(--line);border-radius:20px;padding:23px}.stat strong{display:block;font-size:1.6rem;letter-spacing:-.04em}.stat span{font-size:.86rem;color:var(--muted)}
+.dark-section{background:var(--dark);color:white}.dark-section .section-intro{color:#b9c0cf}.dark-section .kicker{color:var(--lime)}
+.timeline{display:grid;grid-template-columns:190px 1fr;gap:25px;padding:28px 0;border-top:1px solid #ffffff25}.timeline:last-child{border-bottom:1px solid #ffffff25}.date{color:var(--lime);font-size:.8rem;font-weight:800}.role h3{font-size:1.45rem;margin:0;letter-spacing:-.04em}.company{color:#c1c7d4;font-size:.9rem;margin:2px 0 14px}.role ul{margin:0;padding-left:19px;color:#e0e4eb}.role li{padding:3px 0}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.process{background:white;border:1px solid var(--line);padding:21px;border-radius:20px;min-height:190px}.num{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:var(--lime);font-weight:900;margin-bottom:24px}.process h3{margin:0 0 7px;font-size:1.05rem}.process p{margin:0;color:var(--muted);font-size:.88rem}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:16px}.skillbox{background:white;border:1px solid var(--line);border-radius:22px;padding:24px}.skillbox h3{margin:0 0 15px}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{font-size:.82rem;padding:8px 11px;border-radius:99px;background:#f0edff;color:#4933b7;font-weight:700}.chip.green{background:#f1ffd5;color:#3b5211}
+.education{display:flex;justify-content:space-between;gap:20px;align-items:center;background:white;border:1px solid var(--line);border-radius:22px;padding:24px}.education h3{margin:0}.education p{margin:4px 0 0;color:var(--muted)}.year{font-weight:900;color:var(--violet);white-space:nowrap}
+.contact{background:var(--lime);border-radius:28px;padding:clamp(26px,5vw,54px);display:flex;justify-content:space-between;align-items:center;gap:24px}.contact h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1;letter-spacing:-.06em;margin:8px 0}.contact p{margin:0;color:#3c4822}.contact .btn{background:var(--dark);white-space:nowrap}
+footer{padding:25px 0;color:var(--muted);font-size:.82rem;display:flex;justify-content:space-between;gap:15px}
+@media(max-width:760px){.navlinks{gap:12px;font-size:.78rem}.hero{grid-template-columns:1fr;padding-top:30px}.visual{min-height:270px}.visual .monogram{font-size:4rem}.section-head{display:block}.section-intro{margin-top:12px}.stats{grid-template-columns:1fr}.timeline{grid-template-columns:1fr;gap:8px}.process-grid{grid-template-columns:1fr 1fr}.skills{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}.education{align-items:flex-start;flex-direction:column}footer{flex-direction:column}}
+@media(max-width:430px){.wrap{padding:0 18px}.navlinks a:nth-child(2){display:none}.process-grid{grid-template-columns:1fr}.visual{min-height:230px}}
+
+/* Visual KPI cards and workflow diagrams */
+.kpi-panel{margin-top:22px;padding:20px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(255,255,255,.045)}
+.kpi-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}
+.kpi-heading strong{font-size:.92rem;color:#fff}
+.kpi-heading span{font-size:.72rem;color:#b8c0d1;letter-spacing:.06em;text-transform:uppercase}
+.kpi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.kpi{padding:14px;border-radius:13px;background:rgba(255,255,255,.06);min-width:0}
+.kpi .value{font-size:clamp(1.35rem,3vw,2rem);font-weight:850;letter-spacing:-.045em;color:var(--lime);line-height:1.15}
+.kpi .label{font-size:.78rem;color:#e3e7ef;margin-top:5px}
+.kpi .note{font-size:.7rem;color:#aeb7c8;margin-top:4px}
+.mini-bars{display:grid;gap:11px;margin-top:17px}
+.bar-row{display:grid;grid-template-columns:minmax(86px,1fr) 2fr auto;align-items:center;gap:10px;font-size:.75rem;color:#dce2ec}
+.bar-track{height:8px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden}
+.bar-fill{height:100%;border-radius:99px;background:var(--lime)}
+.bar-fill.violet{background:#a99aff}
+.bar-value{font-weight:750;color:#fff;white-space:nowrap}
+.workflow-mini{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:17px}
+.workflow-step{position:relative;padding:12px 8px;border-radius:12px;background:rgba(255,255,255,.06);text-align:center;font-size:.72rem;color:#eef0f7}
+.workflow-step b{display:block;color:var(--lime);font-size:.72rem;margin-bottom:5px}
+.workflow-step:not(:last-child):after{content:'›';position:absolute;right:-7px;top:35%;z-index:1;color:var(--lime);font-size:1.1rem;font-weight:900}
+.kpi-caption{font-size:.72rem;color:#aeb7c8;margin:13px 0 0}
+@media(max-width:600px){.kpi-grid{grid-template-columns:1fr 1fr}.workflow-mini{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow-step:nth-child(2):after{display:none}.bar-row{grid-template-columns:90px 1fr auto;gap:7px}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="brand" href="#">IW<span>.</span> / PORTFOLIO</a><div class="navlinks"><a href="#profil">Profil</a><a href="#pengalaman">Pengalaman</a><a href="#keahlian">Keahlian</a><a href="#kontak">Kontak</a></div></nav>
+<section class="hero" id="profil">
+<div><div class="eyebrow"><span class="dot"></span> Administrasi · Operational Support Specialist</div>
+<h1>Work smart.<br><em>Stay precise.</em></h1>
+<p class="lead">Saya Iin Wijyawati, profesional di bidang administrasi, layanan pelanggan, dan operasional. Terbiasa mengelola data dan dokumen, melakukan verifikasi, menyusun laporan, serta berkoordinasi untuk mendukung proses kerja yang akurat dan efisien.</p>
+<div class="hero-actions"><a class="btn" href="#pengalaman">Jelajahi pengalaman ↘</a><a class="btn alt" href="#kontak">Hubungi saya</a></div></div>
+<div class="visual"><div class="mini">Professional portfolio · 2026</div><div class="monogram">I<span style="color:var(--lime)">W</span>.</div><div class="tag">Detail-oriented · Adaptif · Kolaboratif</div></div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="stats"><div class="stat"><strong>4 area kerja</strong><span>Administrasi, medis, contact center & call center</span></div><div class="stat"><strong>Data → Laporan</strong><span>Terbiasa menangani alur data dan dokumentasi</span></div><div class="stat"><strong>Service-minded</strong><span>Fokus pada akurasi dan kebutuhan pelanggan</span></div></div>
+</section>
+</div>
+<section class="section dark-section" id="pengalaman"><div class="wrap">
+<div class="section-head"><div><div class="kicker">01 / Career journey</div><h2>Pengalaman yang<br>membentuk cara kerja.</h2></div><p class="section-intro">Beragam peran dengan benang merah yang sama: ketelitian, komunikasi, pengelolaan proses, dan pelayanan.</p></div>
+<div class="timeline"><div class="date">OKT 2026 — SEKARANG</div><div class="role"><h3>Onsite Medical Admin</h3><div class="company">Bumame Healthcare</div><ul><li>Mengelola registrasi dan input data peserta untuk MCU, vaksinasi, dan pemeriksaan kesehatan lainnya.</li><li>Memverifikasi identitas serta memastikan akurasi data administrasi peserta.</li><li>Mengoordinasikan alur registrasi sesuai paket layanan dan berkolaborasi dengan tim medis.</li><li>Menyusun rekapitulasi data serta menjaga kerahasiaan informasi medis.</li></ul>
+<div class="kpi-panel">
+<div class="kpi-heading"><strong>Gambaran volume registrasi</strong><span>Onsite workflow</span></div>
+<div class="kpi-grid">
+<div class="kpi"><div class="value">65+</div><div class="label">Peserta terdaftar</div><div class="note">Jumlah minimum yang biasa ditangani</div></div>
+<div class="kpi"><div class="value">100+</div><div class="label">Peserta dalam skala besar</div><div class="note">Bergantung paket dan kebutuhan klien</div></div>
+</div>
+<div class="mini-bars">
+<div class="bar-row"><span>Registrasi rutin</span><div class="bar-track"><div class="bar-fill" style="width:58%"></div></div><span class="bar-value">65+</span></div>
+<div class="bar-row"><span>Skala besar</span><div class="bar-track"><div class="bar-fill violet" style="width:100%"></div></div><span class="bar-value">100+</span></div>
+</div>
+<p class="kpi-caption">Visual menunjukkan skala volume relatif, bukan target kinerja atau data statistik.</p>
+</div>
+</div></div>
+<div class="timeline"><div class="date">JUN 2022 — MEI 2026</div><div class="role"><h3>Administrasi</h3><div class="company">Transpacific Finance</div><ul><li>Mengelola layanan administrasi pembiayaan: angsuran, pelunasan, pengambilan BPKB, dan klaim asuransi.</li><li>Melakukan screening dan verifikasi dokumen kredit sebelum proses approval.</li><li>Mengelola administrasi Purchase Order (PO), verifikasi unit, serta pelaporan pencairan dana bersama tim Finance.</li><li>Menyusun laporan operasional harian, mengelola administrasi keuangan dan penyetoran bank.</li><li>Menyiapkan dokumen FPPU dan memastikan kelengkapan administrasi cabang sesuai SOP.</li></ul>
+<div class="kpi-panel">
+<div class="kpi-heading"><strong>Alur dan kapasitas administrasi</strong><span>Data → Drawdown</span></div>
+<div class="kpi-grid">
+<div class="kpi"><div class="value">50/hari</div><div class="label">Data awal masuk</div><div class="note">Volume data yang diproses pada tahap awal</div></div>
+<div class="kpi"><div class="value">200/bulan</div><div class="label">Drawdown</div><div class="note">Volume proses hingga tahap pencairan</div></div>
+</div>
+<div class="workflow-mini">
+<div class="workflow-step"><b>01</b>Data masuk</div>
+<div class="workflow-step"><b>02</b>Screening</div>
+<div class="workflow-step"><b>03</b>Verifikasi & PO</div>
+<div class="workflow-step"><b>04</b>Drawdown</div>
+</div>
+<p class="kpi-caption">Angka menggambarkan volume kerja yang pernah ditangani, bukan jaminan hasil setiap periode.</p>
+</div>
+</div></div>
+<div class="timeline"><div class="date">JUL 2021 — JAN 2022</div><div class="role"><h3>Contact Center</h3><div class="company">KB Finansia MF</div><ul><li>Melakukan follow-up pembayaran dan negosiasi Promise to Pay (PTP) sesuai target dan prosedur.</li><li>Memperbarui akurasi data pelanggan pada sistem serta menyusun laporan aktivitas harian.</li><li>Mencapai KPI yang mencakup kualitas layanan, produktivitas, dan efektivitas komunikasi.</li></ul>
+<div class="kpi-panel">
+<div class="kpi-heading"><strong>Ringkasan alur kerja</strong><span>Contact Center</span></div>
+<div class="workflow-mini">
+<div class="workflow-step"><b>01</b>Follow-up</div>
+<div class="workflow-step"><b>02</b>Negosiasi PTP</div>
+<div class="workflow-step"><b>03</b>Update data</div>
+<div class="workflow-step"><b>04</b>Laporan harian</div>
+</div>
+<p class="kpi-caption">Diagram merangkum tahapan kerja utama tanpa menambahkan angka KPI yang belum dikonfirmasi.</p>
+</div>
+</div></div>
+<div class="timeline"><div class="date">FEB 2018 — FEB 2020</div><div class="role"><h3>Call Center</h3><div class="company">Summit Oto Finance</div><ul><li>Melayani pelanggan melalui panggilan inbound dan outbound serta memberikan informasi dan solusi atas kebutuhan pelanggan.</li><li>Melakukan follow-up pembayaran dan negosiasi Promise to Pay (PTP).</li></ul>
+<div class="kpi-panel">
+<div class="kpi-heading"><strong>Fokus produktivitas</strong><span>Inbound & outbound</span></div>
+<div class="kpi-grid">
+<div class="kpi"><div class="value">190/hari</div><div class="label">Target PTP</div><div class="note">Promise to Pay</div></div>
+<div class="kpi"><div class="value">35%</div><div class="label">Closing ratio</div><div class="note">Target bulanan</div></div>
+</div>
+<div class="mini-bars">
+<div class="bar-row"><span>Target PTP</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-value">190/hari</span></div>
+<div class="bar-row"><span>Closing ratio</span><div class="bar-track"><div class="bar-fill violet" style="width:35%"></div></div><span class="bar-value">35%</span></div>
+</div>
+<p class="kpi-caption">Bar menunjukkan angka target yang disebutkan, bukan pencapaian aktual.</p>
+</div>
+</div></div>
+</div></section>
+<div class="wrap">
+<section class="section"><div class="section-head"><div><div class="kicker">02 / Workflow</div><h2>Rapi dari awal<br>sampai selesai.</h2></div><p class="section-intro">Gambaran pendekatan kerja yang relevan dengan pengalaman administrasi, registrasi, dan layanan pelanggan.</p></div>
+<div class="process-grid"><div class="process"><div class="num">01</div><h3>Terima & input</h3><p>Menerima data atau dokumen, lalu memasukkannya ke sistem dengan cermat.</p></div><div class="process"><div class="num">02</div><h3>Verifikasi</h3><p>Memeriksa identitas, kelengkapan, dan validitas data sebelum diproses.</p></div><div class="process"><div class="num">03</div><h3>Koordinasi proses</h3><p>Berkoordinasi dengan tim terkait agar alur layanan berjalan lancar.</p></div><div class="process"><div class="num">04</div><h3>Rekap & laporan</h3><p>Menyusun rekap atau laporan serta menjaga kerahasiaan informasi.</p></div></div>
+</section>
+<section class="section" id="keahlian" style="padding-top:0"><div class="section-head"><div><div class="kicker">03 / Toolkit</div><h2>Keahlian utama.</h2></div><p class="section-intro">Kombinasi kemampuan administratif, pelayanan, dan cara kerja profesional.</p></div>
+<div class="skills"><div class="skillbox"><h3>Administrasi & operasional</h3><div class="chips"><span class="chip">Administrasi & Data Entry</span><span class="chip">Document Management</span><span class="chip">Verifikasi Data</span><span class="chip">Laporan Operasional</span><span class="chip">Registrasi Medis</span></div></div><div class="skillbox"><h3>Profesional & kolaborasi</h3><div class="chips"><span class="chip green">Ketelitian & Akurasi</span><span class="chip green">Problem-Solving</span><span class="chip green">Time Management</span><span class="chip green">Teamwork</span><span class="chip green">Attention to Detail</span><span class="chip green">Komunikasi Pelanggan</span></div></div></div>
+</section>
+<section class="section" style="padding-top:0"><div class="section-head"><div><div class="kicker">04 / Education</div><h2>Fondasi pendidikan.</h2></div></div><div class="education"><div><h3>Diploma III Perpajakan</h3><p>Universitas Trisakti · Jakarta</p></div><div class="year">2014 — 2017</div></div></section>
+<section class="section" id="kontak" style="padding-top:0"><div class="contact"><div><div class="kicker" style="color:#394b13">Let’s connect</div><h2>Mari berdiskusi.</h2><p>Terbuka untuk kesempatan di bidang administrasi, operasional, dan customer service.</p></div><div><a class="btn" href="mailto:iin.wjyawati@gmail.com">Email saya ↗</a><p style="margin-top:12px;font-size:.88rem">0878 9014 4765<br>Tangerang, Jakarta</p></div></div></section>
+<footer><span>© 2026 Iin Wijyawati · Professional Portfolio</span><span>Designed with clarity, built around experience.</span></footer>
+</div>
+</body></html>
